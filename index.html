@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+</head>
+<body>
+    <div class="userInput">
+        <input class="inputValue" type="text" placeholder="Enter the city">
+        <input class="button" type="button" value="Submit">
+    </div>
+    <div class="desc">
+        <h2 class="name"></h2>
+        <p class="temp"></p>
+        <p class="humidity"></p>
+        <p class="rain"></p>
+
+    </div>  
+    <div id="forecast">
+        <p>Forecast for next 3 days</p>
+    </div> 
+    <div class="canvasStyle">
+    <canvas id="myChart"></canvas>
+    </div>
+    <script src="items.js"></script>
+</body>
+</html>
