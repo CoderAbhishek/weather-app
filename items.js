@@ -13,6 +13,8 @@ myButton.addEventListener('click', function () {
     .then((response) => response.json())
     .then((data) => {
       //console.log(data);
+      let description = document.querySelector('.desc');
+      description.classList.add('my-bg-effect','my-border');
       const nameValue = data['name'];
       const tempValue = data['main']['temp'];
       const humidityValue = data['main']['humidity'];
@@ -30,27 +32,32 @@ myButton.addEventListener('click', function () {
     //const currentDate = getForecast();
     //console.log(currentDate);
     //let myDate = '';
+    let forecast = document.getElementById('forecast');
+    forecast.classList.add('my-bg-effect','my-border');
     async function getForecast(){
     const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${inputValue.value}&units=metric&APPID=de08a1ee909a4bf2d4b17da41cb07845`);
     const data = await res.json();
       //console.log(data);
-      let forecast = document.getElementById('forecast');
+      
       //myDate = data.list['0']['dt_txt'];
       //console.log(myDate);
+      let heading = '<h4 class="my-bg-effect">Forecast for next 3 days</h4>'
+      forecast.innerHTML += heading;
           for(let i=0;i<=16;i = i + 8){
-        let myOutput = `<ul class="parameters">
-              <li class="pTemp">Temperature: ${Math.round(data.list[i].main.temp)} °C</li>
-              <li class="pHumid">Humidity: ${Math.round(data.list[i].main.humidity)} %</li>`;
+        let myOutput = `
+              <ul class="parameters my-bg-effect my-border">
+              <li class="pTemp my-bg-effect">Temperature: ${Math.round(data.list[i].main.temp)} °C</li>
+              <li class="pHumid my-bg-effect">Humidity: ${Math.round(data.list[i].main.humidity)} %</li>`;
 
         if (data.list[i].rain !== undefined) {
-          myOutput += `<li class="pRain">Precipitation: ${data.list[i].rain['3h']} mm</li>`;
+          myOutput += `<li class="pRain my-bg-effect">Precipitation: ${data.list[i].rain['3h']} mm</li>`;
         }
         else
-        myOutput += `<li class="pRain">Precipitation: 0 mm</li>`;
+        myOutput += `<li class="pRain my-bg-effect">Precipitation: 0 mm</li>`;
 
         myOutput += '</ul>';
 
-        forecast.innerHTML = forecast.innerHTML + myOutput;
+        forecast.innerHTML += myOutput;
     }
     //return myDate;
   }
