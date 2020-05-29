@@ -43,9 +43,10 @@ myButton.addEventListener('click', function () {
       //console.log(myDate);
       let heading = '<h4 class="my-bg-effect">Forecast for next 3 days</h4>'
       forecast.innerHTML += heading;
+      // let myOutput = '<div class ="row justify-content-center">'
           for(let i=0;i<=16;i = i + 8){
         let myOutput = `
-              <ul class="parameters my-bg-effect my-border">
+              <ul class="parameters my-bg-effect my-border col-sm-4">
               <li class="pTemp my-bg-effect">Temperature: ${Math.round(data.list[i].main.temp)} °C</li>
               <li class="pHumid my-bg-effect">Humidity: ${Math.round(data.list[i].main.humidity)} %</li>`;
 
@@ -56,9 +57,11 @@ myButton.addEventListener('click', function () {
         myOutput += `<li class="pRain my-bg-effect">Precipitation: 0 mm</li>`;
 
         myOutput += '</ul>';
-
+        // myOutput += '</div>';
+        
         forecast.innerHTML += myOutput;
-    }
+      }
+
     //return myDate;
   }
     //console.log(myDate);

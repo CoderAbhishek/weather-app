@@ -3,7 +3,7 @@
     padding: 0;
     /* box-sizing: border-box; */
     /* background-color: black; */
-    background-color: turquoise;
+    background-color: rgb(37, 161, 233);
 }
 .userInput{
     text-align: center;
@@ -45,10 +45,10 @@ input[type=button]:hover{
 }
 .desc{
     text-align: center;
-    padding: 10px 50px;
+    padding: 10px 10px;
     /* background-color: yellow; */
     /* border: 2px solid black; */
-    margin: 0 20%;
+    margin: 0 20px;
 }
 .name{
     font-weight: bolder;
