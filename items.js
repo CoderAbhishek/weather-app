@@ -9,7 +9,7 @@ myButton.addEventListener('click', function () {
   fetch(
     'http://api.openweathermap.org/data/2.5/weather?q=' +
       inputValue.value +
-      '&units=metric&APPID=de08a1ee909a4bf2d4b17da41cb07845')
+      '&units=metric&appid=ff63e461b260df94ca95f55c74377523')
     .then((response) => response.json())
     .then((data) => {
       //console.log(data);
@@ -35,7 +35,7 @@ myButton.addEventListener('click', function () {
     let forecast = document.getElementById('forecast');
     forecast.classList.add('my-bg-effect','my-border');
     async function getForecast(){
-    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${inputValue.value}&units=metric&APPID=de08a1ee909a4bf2d4b17da41cb07845`);
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${inputValue.value}&units=metric&APPID=ff63e461b260df94ca95f55c74377523`);
     const data = await res.json();
       //console.log(data);
       
